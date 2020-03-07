@@ -1,0 +1,23 @@
+html, body{
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: larger;
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/white_wall2.png");
+}
+.quiz, .scoreContainer, .highScorePage{
+    display: none;
+}
+
+.card {
+    margin-top: 7% !important;
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/white_wall2.png");
+}
+
+li:hover {
+    background-color:lightgrey;
+    max-width: fit-content;
+    cursor: pointer;
+  }
+
+  .highScorePage{
+    margin-top: 0%;
+  }
