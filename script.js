@@ -9,14 +9,17 @@
 9. When time runs out/ or all questions are answered, user is prompted to enter their initials. 
 10. Score and initials are stored in Local Storage 
 */
-var questionsArray = questions
-var totalTime  = questionsArray.length * 15
+var questionsArray = questions;
+var totalTime  = questionsArray.length * 15;
 
 function countdown(){
-    totalTime - 1
+    totalTime = totalTime - 1
+    document.getElementById("timer").textContent = totalTime; 
+    document.getElementById("questions").textContent = questionsArray[0].title;
 }
 
-// Click button and change visability
+
+// Click button and change visability 
 document.getElementById("start-btn").addEventListener("click", function () {
   startQuiz()
 });
@@ -24,6 +27,7 @@ document.getElementById("start-btn").addEventListener("click", function () {
 function startQuiz(){
     document.getElementById("start").classList.add("hidden");
     document.getElementById("begin").classList.remove("hidden");
+    setInterval(countdown, 1000); 
 }
 
 

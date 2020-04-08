@@ -1,5 +1,7 @@
 // List of questions
 
+// Display questions after start, grab index of array and then extract data using dot operator 
+
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
