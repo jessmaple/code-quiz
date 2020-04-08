@@ -10,3 +10,8 @@
 10. Score and initials are stored in Local Storage 
 */ 
 
+// Click button and change visability 
+document.getElementById("start-btn").addEventListener("click", function(){
+   document.getElementById("start").classList.add("hidden")
+   document.getElementById("begin").classList.remove("hidden")
+})
