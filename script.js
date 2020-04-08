@@ -12,6 +12,10 @@
 
 // Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
-  document.getElementById("start").classList.add("hidden");
-  document.getElementById("begin").classList.remove("hidden");
+  startQuiz()
 });
+
+function startQuiz(){
+    document.getElementById("start").classList.add("hidden");
+    document.getElementById("begin").classList.remove("hidden");
+}
