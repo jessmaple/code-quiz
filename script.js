@@ -12,6 +12,7 @@
 var questionsArray = questions;
 var totalTime = questionsArray.length * 15;
 var questionIndex = 0;
+var setIntervalId;
 
 function countdown() {
   totalTime = totalTime - 1;
@@ -21,6 +22,8 @@ function countdown() {
 
   if (totalTime % 15 === 0) {
     questionIndex++;
+  } else if (totalTime === 0) {
+    clearInterval(setIntervalID);
   }
 }
 
@@ -32,5 +35,5 @@ document.getElementById("start-btn").addEventListener("click", function () {
 function startQuiz() {
   document.getElementById("start").classList.add("hidden");
   document.getElementById("begin").classList.remove("hidden");
-  setInterval(countdown, 1000);
+  setIntervalID = setInterval(countdown, 1000);
 }
