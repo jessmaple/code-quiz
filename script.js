@@ -10,25 +10,27 @@
 10. Score and initials are stored in Local Storage 
 */
 var questionsArray = questions;
-var totalTime  = questionsArray.length * 15;
+var totalTime = questionsArray.length * 15;
+var questionIndex = 0;
 
-function countdown(){
-    totalTime = totalTime - 1
-    document.getElementById("timer").textContent = totalTime; 
-    document.getElementById("questions").textContent = questionsArray[0].title;
+function countdown() {
+  totalTime = totalTime - 1;
+  document.getElementById("timer").textContent = totalTime;
+  document.getElementById("questions").textContent =
+    questionsArray[questionIndex].title;
+
+  if (totalTime % 15 === 0) {
+    questionIndex++;
+  }
 }
 
-
-// Click button and change visability 
+// Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
-  startQuiz()
+  startQuiz();
 });
 
-function startQuiz(){
-    document.getElementById("start").classList.add("hidden");
-    document.getElementById("begin").classList.remove("hidden");
-    setInterval(countdown, 1000); 
+function startQuiz() {
+  document.getElementById("start").classList.add("hidden");
+  document.getElementById("begin").classList.remove("hidden");
+  setInterval(countdown, 1000);
 }
-
-
-
