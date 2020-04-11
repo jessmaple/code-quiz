@@ -17,13 +17,18 @@ var setIntervalId;
 function countdown() {
   totalTime = totalTime - 1;
   document.getElementById("timer").textContent = totalTime;
-  document.getElementById("questions").textContent =
-    questionsArray[questionIndex].title;
+
+  if (questionsArray[questionIndex] != undefined) {
+    document.getElementById("questions").textContent =
+      questionsArray[questionIndex].title;
+  }
 
   if (totalTime % 15 === 0) {
     questionIndex++;
-  } else if (totalTime === 0) {
-    clearInterval(setIntervalID);
+  } else if (totalTime <= 0) {
+      totalTime = 0
+      document.getElementById("timer").textContent = totalTime;
+    clearInterval(setIntervalId);
   }
 }
 
@@ -35,5 +40,5 @@ document.getElementById("start-btn").addEventListener("click", function () {
 function startQuiz() {
   document.getElementById("start").classList.add("hidden");
   document.getElementById("begin").classList.remove("hidden");
-  setIntervalID = setInterval(countdown, 1000);
+  setIntervalId = setInterval(countdown, 1000);
 }
