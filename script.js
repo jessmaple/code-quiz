@@ -16,18 +16,35 @@ var setIntervalId;
 
 function countdown() {
   totalTime = totalTime - 1;
-  document.getElementById("timer").textContent = totalTime;
+
+  if (totalTime >= 0) {
+    document.getElementById("timer").textContent = totalTime;
+  }
 
   if (questionsArray[questionIndex] != undefined) {
     document.getElementById("questions").textContent =
       questionsArray[questionIndex].title;
+    var ul = document.createElement("ul");
+    ul.classList.add("list-group");
+    document.getElementById("choices").textContent = "";
+    for (var i = 0; i < questionsArray[questionIndex].choices.length; i++) {
+      var li = document.createElement("li");
+      li.classList.add("list-group-item");
+      li.textContent = questionsArray[questionIndex].choices[i];
+
+      li.addEventListener("click", function () {
+        var choice = this.textContent;
+        alert(choice);
+      });
+      ul.appendChild(li);
+    }
   }
+
+  document.getElementById("choices").appendChild(ul);
 
   if (totalTime % 15 === 0) {
     questionIndex++;
   } else if (totalTime <= 0) {
-      totalTime = 0
-      document.getElementById("timer").textContent = totalTime;
     clearInterval(setIntervalId);
   }
 }
