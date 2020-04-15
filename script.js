@@ -67,3 +67,17 @@ function startQuiz() {
   document.getElementById("begin").classList.remove("hidden");
   setIntervalId = setInterval(countdown, 1000);
 }
+
+document.getElementById("clear-score").addEventListener("click", function(){
+    const highScore = localStorage.getItem("highScore")
+    if (highScore != undefined) {
+        localStorage.setItem("highScore", "0")
+    }
+})
+
+document.getElementById("go-back").addEventListener("click", function(){
+    totalTime = questionsArray.length * 15;
+    questionIndex = 0 
+    document.getElementById("start").classList.remove("hidden")
+    document.getElementById("score").classList.add("hidden")
+})
