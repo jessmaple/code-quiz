@@ -34,21 +34,29 @@ function countdown() {
 
       li.addEventListener("click", function () {
         var choice = this.textContent;
-        alert(choice);
+        // alert(choice);
       });
       ul.appendChild(li);
     }
+    document.getElementById("choices").appendChild(ul);
   }
 
-  document.getElementById("choices").appendChild(ul);
+ 
 
   if (totalTime % 15 === 0) {
     questionIndex++;
   } else if (totalTime <= 0) {
     clearInterval(setIntervalId);
+       document.getElementById("begin").classList.add("hidden")
+       document.getElementById("highscore").classList.remove("hidden")
+       document.getElementById("initials").classList.remove("hidden")
   }
 }
-
+document.getElementById("add-initial").addEventListener("click", function(){
+    document.getElementById("initials").classList.add("hidden")
+    document.getElementById("score").classList.add("hidden")
+    
+})
 // Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
   startQuiz();
