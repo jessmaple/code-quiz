@@ -33,8 +33,16 @@ function countdown() {
       li.textContent = questionsArray[questionIndex].choices[i];
 
       li.addEventListener("click", function () {
-        var choice = this.textContent;
-        // alert(choice);
+        var userChoice = this.textContent;
+        var answer = questionsArray[questionIndex].answer
+        if (userChoice ===  answer ){
+            questionIndex++ 
+            document.getElementById("status").textContent = "correct"
+
+            clearInterval(setIntervalId)
+            setTimeout(startQuiz, 3000)
+        }
+
       });
       ul.appendChild(li);
     }
@@ -65,6 +73,7 @@ document.getElementById("start-btn").addEventListener("click", function () {
 function startQuiz() {
   document.getElementById("start").classList.add("hidden");
   document.getElementById("begin").classList.remove("hidden");
+  document.getElementById("status").textContent = "";
   setIntervalId = setInterval(countdown, 1000);
 }
 
