@@ -54,8 +54,8 @@ function countdown() {
 }
 document.getElementById("add-initial").addEventListener("click", function(){
     document.getElementById("initials").classList.add("hidden")
-    document.getElementById("score").classList.add("hidden")
-    
+    document.getElementById("score").classList.remove("hidden")
+
 })
 // Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
