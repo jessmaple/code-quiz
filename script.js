@@ -34,37 +34,42 @@ function countdown() {
 
       li.addEventListener("click", function () {
         var userChoice = this.textContent;
-        var answer = questionsArray[questionIndex].answer
-        if (userChoice ===  answer ){
-            questionIndex++ 
-            document.getElementById("status").textContent = "correct"
-
-            clearInterval(setIntervalId)
-            setTimeout(startQuiz, 3000)
+        var answer = questionsArray[questionIndex].answer;
+        if (userChoice === answer) {
+         
+          document.getElementById("status").textContent = "correct";
+        } else {
+          totalTime = totalTime - 15;
+          document.getElementById("status").textContent = "wrong";
         }
-
+        questionIndex++;
+        clearInterval(setIntervalId);
+        if (questionIndex < questionsArray.length && totalTime > 0) {
+          setTimeout(startQuiz, 3000);
+        } else {
+          document.getElementById("begin").classList.add("hidden");
+          document.getElementById("highscore").classList.remove("hidden");
+          document.getElementById("initials").classList.remove("hidden");
+        }
       });
       ul.appendChild(li);
     }
     document.getElementById("choices").appendChild(ul);
   }
 
- 
-
   if (totalTime % 15 === 0) {
     questionIndex++;
   } else if (totalTime <= 0) {
     clearInterval(setIntervalId);
-       document.getElementById("begin").classList.add("hidden")
-       document.getElementById("highscore").classList.remove("hidden")
-       document.getElementById("initials").classList.remove("hidden")
+    document.getElementById("begin").classList.add("hidden");
+    document.getElementById("highscore").classList.remove("hidden");
+    document.getElementById("initials").classList.remove("hidden");
   }
 }
-document.getElementById("add-initial").addEventListener("click", function(){
-    document.getElementById("initials").classList.add("hidden")
-    document.getElementById("score").classList.remove("hidden")
-
-})
+document.getElementById("add-initial").addEventListener("click", function () {
+  document.getElementById("initials").classList.add("hidden");
+  document.getElementById("score").classList.remove("hidden");
+});
 // Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
   startQuiz();
@@ -77,16 +82,16 @@ function startQuiz() {
   setIntervalId = setInterval(countdown, 1000);
 }
 
-document.getElementById("clear-score").addEventListener("click", function(){
-    const highScore = localStorage.getItem("highScore")
-    if (highScore != undefined) {
-        localStorage.setItem("highScore", "0")
-    }
-})
+document.getElementById("clear-score").addEventListener("click", function () {
+  const highScore = localStorage.getItem("highScore");
+  if (highScore != undefined) {
+    localStorage.setItem("highScore", "0");
+  }
+});
 
-document.getElementById("go-back").addEventListener("click", function(){
-    totalTime = questionsArray.length * 15;
-    questionIndex = 0 
-    document.getElementById("start").classList.remove("hidden")
-    document.getElementById("score").classList.add("hidden")
-})
+document.getElementById("go-back").addEventListener("click", function () {
+  totalTime = questionsArray.length * 15;
+  questionIndex = 0;
+  document.getElementById("start").classList.remove("hidden");
+  document.getElementById("score").classList.add("hidden");
+});
