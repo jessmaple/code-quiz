@@ -36,7 +36,6 @@ function countdown() {
         var userChoice = this.textContent;
         var answer = questionsArray[questionIndex].answer;
         if (userChoice === answer) {
-         
           document.getElementById("status").textContent = "correct";
         } else {
           totalTime = totalTime - 15;
@@ -69,6 +68,10 @@ function countdown() {
 document.getElementById("add-initial").addEventListener("click", function () {
   document.getElementById("initials").classList.add("hidden");
   document.getElementById("score").classList.remove("hidden");
+  var initialValue = document.getElementById("initial-name").value;
+  var getCurrentTime =  document.getElementById("timer").textContent; 
+  localStorage.setItem("highScore", getCurrentTime);
+  localStorage.setItem("initial", initialValue);
 });
 // Click button and change visability
 document.getElementById("start-btn").addEventListener("click", function () {
