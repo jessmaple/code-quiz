@@ -5,3 +5,11 @@
 .time {
   float: right;
 }
+
+.container-fluid{
+  background-color: #464C92; 
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
