@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&family=Raleway&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,39 +17,39 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <span>high scores</span>
-      <span class="time">timer:<span id="timer"> 0</span></span>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="start">
-            <button id="start-btn">start quiz</button>
-          </div>
-          <div id="begin" class="hidden">
-
-            <!-- place questions here -->
-                  <div id="questions"></div>
-
-                  <div id="choices"></div>
-                  <hr>
-                  <div id="status"></div>
-          </div>
-          <div id="highscore" class="hidden">
-            <div id="initials" class="hidden">
-              <input type="text" id="initial-name" />
-              <button id="add-initial">add initals</button>
+    <div class="background">
+      <div class="container-fluid">
+        <span>high scores</span>
+        <span class="time">timer:<span id="timer"> 0</span></span>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="start">
+              <button id="start-btn">start quiz</button>
             </div>
-            <div id="score" class="hidden">
-              <button id="clear-score">clear score</button>
-              <button id="go-back">go back</button>
+            <div id="begin" class="hidden">
+              <!-- place questions here -->
+              <div id="questions"></div>
+
+              <div id="choices"></div>
+              <hr />
+              <div id="status"></div>
+            </div>
+            <div id="highscore" class="hidden">
+              <div id="initials" class="hidden">
+                <input type="text" id="initial-name" />
+                <button id="add-initial">add initals</button>
+              </div>
+              <div id="score" class="hidden">
+                <button id="clear-score">clear score</button>
+                <button id="go-back">go back</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <script src="./questions.js"></script>
     <script src="./script.js"></script>
   </body>
