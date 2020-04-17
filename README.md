@@ -8,6 +8,7 @@ Code Quiz is a timer-based quiz application that stores high scores client-side.
 Local storage & Vanilla JS
 
 ##How to Use 
-1. Visit application at: 
+1. Visit application at: https://jessmaple.github.io/code-quiz/.
+2. Click 
 
 
