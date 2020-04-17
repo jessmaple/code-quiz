@@ -33,6 +33,7 @@
   -webkit-animation: pulsate 3s ease-out;
   -webkit-animation-iteration-count: infinite; 
   opacity: 0.5;
+  z-index: 12;
 }
 
 @-webkit-keyframes pulsate {
@@ -50,5 +51,6 @@
 
 #questions{
  font-family: font-family: 'Raleway', sans-serif;
+ color: #464C92;
 
 }
