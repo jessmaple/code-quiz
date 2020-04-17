@@ -50,7 +50,19 @@
 
 
 #questions{
- font-family: font-family: 'Raleway', sans-serif;
+ font-family: 'Raleway', sans-serif;
  color: #464C92;
 
+}
+
+#choices{
+  color: #ff048f;
+  font-family: 'Poppins', sans-serif;
+  text-transform: lowercase;
+}
+
+#status{
+  color: #ff048f;
+  font-family: 'Poppins', sans-serif;
+  text-transform: lowercase;
 }
